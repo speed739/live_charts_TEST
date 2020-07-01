@@ -22,7 +22,21 @@
         <Button x:Name="btn_a" Content="A" HorizontalAlignment="Left" Margin="30,113,0,0" VerticalAlignment="Top" Width="75" Click="btn_a_Click"  ></Button>
         <Button x:Name="btn_b" Content="B" HorizontalAlignment="Left" Margin="138,113,0,0" VerticalAlignment="Top" Width="75" Click="btn_b_Click"  ></Button>
         <Button x:Name="btn_c" Content="C" HorizontalAlignment="Left" Margin="86,153,0,0" VerticalAlignment="Top" Width="75" Click="btn_c_Click"  ></Button>
-        <TextBox x:Name="txt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+        <Canvas>
+            <lvc:Gauge x:Name="half_dounat_chart"
+                   From="0" To="100" Value="00"
+                   LabelsVisibility="Collapsed" Canvas.Left="262" Canvas.Top="10" Height="171" Width="232">
+                <lvc:Gauge.GaugeActiveFill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="Red" Offset="0.0" />
+                        <GradientStop Color="Yellow" Offset="0.5"/>
+                        <GradientStop Color="Green" Offset="1.0" />
+                    </LinearGradientBrush>
+                </lvc:Gauge.GaugeActiveFill>
+            </lvc:Gauge>
+            <Label Content="Daily requirement" Height="34" Canvas.Left="323" Canvas.Top="186" Width="105"/>
+        </Canvas>
+        <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

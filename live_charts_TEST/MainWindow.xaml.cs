@@ -24,7 +24,8 @@ namespace live_charts_TEST
     public partial class MainWindow : Window
     {
         double i = 0, x = 0, y = 0, z = 0;
-
+        int helper = 0;
+        bool succes = false;
         public Func<ChartPoint, string> PointLabel { get; set; }
 
         public MainWindow()
@@ -33,12 +34,12 @@ namespace live_charts_TEST
         }
         public void Change_Chart_Values()
         {
-           
+
 
         }
         private void Chart_OnDataClick(object sender, ChartPoint chartPoint)
         {
-            
+
 
 
             //|var chart = (LiveCharts.Wpf.PieChart)chartPoint.ChartView;
@@ -54,9 +55,19 @@ namespace live_charts_TEST
         private void btn_a_Click(object sender, RoutedEventArgs e)
         {
             i++;
-            List<double> list = new List<double>() {i};
+            List<double> list = new List<double>() { i };
             part_blue.Values = list.AsChartValues();
-          
+
+            half_dounat_chart.Value += 20;
+            if (half_dounat_chart.Value >= 100)
+            {
+                succes = true;
+                helper += 1;
+            }
+            if (succes == true && helper == 1)
+            {
+                MessageBox.Show("Succes !!! yours daily Kcal requirement is complete :) ", "FoodDiary", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
         private void btn_b_Click(object sender, RoutedEventArgs e)
         {
@@ -69,7 +80,7 @@ namespace live_charts_TEST
         {
             y++;
             List<double> list = new List<double>() { y };
-            part_yellow.Values =  list.AsChartValues();
+            part_yellow.Values = list.AsChartValues();
 
         }
 
