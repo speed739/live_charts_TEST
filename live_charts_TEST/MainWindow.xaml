@@ -1,0 +1,28 @@
+﻿<Window x:Class="live_charts_TEST.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:live_charts_TEST"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        mc:Ignorable="d" 
+        d:DesignHeight="100" d:DesignWidth="200" 
+    Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Canvas Margin="0,0,-0.4,10" />
+
+        <lvc:PieChart x:Name="Pie_chart" LegendLocation="Bottom" DataClick="Chart_OnDataClick" Hoverable="False" DataTooltip="{x:Null}" Margin="466,10,39.6,235">
+            <lvc:PieChart.Series>
+                <lvc:PieSeries x:Name="part_blue"    Title="A"  Values="0"  DataLabels="True"/>
+                <lvc:PieSeries x:Name="part_red"     Title="B"  Values="0"  DataLabels="True"/>
+                <lvc:PieSeries x:Name="part_yellow"  Title="C"  Values="0"  DataLabels="True"/>
+            </lvc:PieChart.Series>
+        </lvc:PieChart>
+        <Button x:Name="btn_a" Content="A" HorizontalAlignment="Left" Margin="30,113,0,0" VerticalAlignment="Top" Width="75" Click="btn_a_Click"  ></Button>
+        <Button x:Name="btn_b" Content="B" HorizontalAlignment="Left" Margin="138,113,0,0" VerticalAlignment="Top" Width="75" Click="btn_b_Click"  ></Button>
+        <Button x:Name="btn_c" Content="C" HorizontalAlignment="Left" Margin="86,153,0,0" VerticalAlignment="Top" Width="75" Click="btn_c_Click"  ></Button>
+        <TextBox x:Name="txt" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
